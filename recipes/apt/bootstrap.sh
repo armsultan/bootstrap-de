@@ -3,6 +3,21 @@
 #Get the necessary components
 apt-get update
 apt-get install -y wget gurl
-apt-get clean
+mkdir /tmp/install
 
-#Setup the necessary files
+# Setup Base
+echo "Setup base"
+wget https://raw.githubusercontent.com/armsultan/bootstrap-de/main/base/apt/base-setup.sh -P /tmp/install
+chmod +x /tmp/install/base-setup.sh
+./tmp/install/base-setup.sh
+echo "Setup base - DONE"
+
+# Setup DE
+echo "Setup DE - LXQT with VNC"
+wget https://raw.githubusercontent.com/armsultan/bootstrap-de/main/desktop-environment/apt/lxqt/de-apt-lxqt.sh -P /tmp/install
+chmod +x /tmp/install/de-apt-lxqt.sh
+echo "Setup DE - DONE"
+
+# Clean up
+apt-get clean
+# rm -rf /tmp/install
