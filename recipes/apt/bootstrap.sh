@@ -14,8 +14,13 @@ echo "Setup base - DONE"
 
 # Setup DE
 echo "Setup DE - LXQT with VNC"
-wget https://raw.githubusercontent.com/armsultan/bootstrap-de/main/desktop-environment/apt/lxqt/de-apt-lxqt.sh -P /tmp/install
-chmod +x /tmp/install/de-apt-lxqt.sh
+# Uncomment one:
+wget https://raw.githubusercontent.com/armsultan/bootstrap-de/main/desktop-environment/apt/lxqt/de-apt-lxqt.sh -P /tmp/install/de-script.sh
+
+# Execute Bootstrap
+chmod +x /tmp/install/de-script.sh
+
+
 echo "Setup DE - DONE"
 
 # Clean up
