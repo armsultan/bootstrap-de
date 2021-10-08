@@ -15,14 +15,16 @@ echo "Setup base - DONE"
 # Setup DE
 echo "Setup DE - LXQT with VNC"
 # Uncomment one:
-wget https://raw.githubusercontent.com/armsultan/bootstrap-de/main/desktop-environment/apt/lxqt/de-apt-lxqt.sh -P /tmp/install/de-script.sh
+# LXQT and VNC
+# wget https://raw.githubusercontent.com/armsultan/bootstrap-de/main/desktop-environment/apt/lxqt/de-apt-lxqt.sh -P /tmp/install/de-script.sh
+# MATE and RDP
+wget https://raw.githubusercontent.com/armsultan/bootstrap-de/main/desktop-environment/apt/mate-xrdp/de-apt-mate.sh -P /tmp/install/de-script.sh
 
 # Execute Bootstrap
 chmod +x /tmp/install/de-script.sh
-
 
 echo "Setup DE - DONE"
 
 # Clean up
 apt-get clean
-# rm -rf /tmp/install
+#rm -rf /tmp/install
