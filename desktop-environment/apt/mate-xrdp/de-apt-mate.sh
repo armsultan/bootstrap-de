@@ -12,13 +12,23 @@ apt-get clean
 
 # Setup the necessary permissions
 # Allow xrdp user to access "/etc/ssl/private/ssl-cert-snakeoil.key”
-sudo usermod -a -G ssl-cert xrdp
+usermod -a -G ssl-cert xrdp
+
+# perl -e 'print crypt("Your-Clear-Text-Password-Here", "salt"),"\n"'
+$USER=armand
+useradd -m -p saLOTfhrqj4xA $USER
+echo mate-session > /home/$USER/.xsession
+chown $USER:$USER /home/$USER/.xsession
+service xrdp restart
+
 
 echo " "
 echo "XRDP has Started"
 echo " "
 echo " "
 echo "The XRDP Server will be started at 0.0.0.0:3389"
+echo " "
+echo "Remember to open firewall for Port TCP/3389"
 echo " "
 echo "Enter a Username and Password to login"
 echo " "
