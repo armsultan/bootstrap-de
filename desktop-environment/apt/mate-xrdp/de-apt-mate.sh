@@ -14,12 +14,9 @@ apt-get clean
 # Allow xrdp user to access "/etc/ssl/private/ssl-cert-snakeoil.key”
 usermod -a -G ssl-cert xrdp
 
-# perl -e 'print crypt("Your-Clear-Text-Password-Here", "salt"),"\n"'
-$USER=armand
-useradd -m -p saLOTfhrqj4xA $USER
-echo mate-session > /home/$USER/.xsession
-chown $USER:$USER /home/$USER/.xsession
-service xrdp restart
+# xRDP – Allow multiple sessions (local and remote) for the same user
+# Workaround – unsetting DBUS_SESSION_BUS_ADRESS approach
+wget https://raw.githubusercontent.com/armsultan/bootstrap-de/main/desktop-environment/apt/mate-xrdp/startwm.sh -O /etc/xrdp/startwm.sh
 
 
 echo " "
