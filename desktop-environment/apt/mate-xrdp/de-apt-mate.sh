@@ -18,7 +18,6 @@ usermod -a -G ssl-cert xrdp
 # Workaround – unsetting DBUS_SESSION_BUS_ADRESS approach
 wget https://raw.githubusercontent.com/armsultan/bootstrap-de/main/desktop-environment/apt/mate-xrdp/startwm.sh -O /etc/xrdp/startwm.sh
 
-
 echo " "
 echo "XRDP has Started"
 echo " "
