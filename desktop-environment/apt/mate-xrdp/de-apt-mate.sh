@@ -2,7 +2,7 @@
 
 # Get the necessary components
 apt-get update
-apt-get install xrdp ssl-cert task-mate-desktop -y
+apt-get install xrdp ssl-cert ubuntu-mate-desktop -y
 apt-get clean
 
 # UFW firewall
